@@ -65,7 +65,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 // Índice para a entrada em cascata dos cards
-document.querySelectorAll('.grid, .steps, .faq').forEach(group => {
+document.querySelectorAll('.bento, .grid, .steps, .faq').forEach(group => {
   [...group.children].forEach((el, i) => el.style.setProperty('--i', i));
 });
 
