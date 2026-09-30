@@ -133,3 +133,28 @@ if (spyLinks.length && 'IntersectionObserver' in window) {
   }, { rootMargin: '-45% 0px -50% 0px' });
   spyLinks.forEach(a => spy.observe(document.getElementById(a.getAttribute('href').split('#')[1])));
 }
+
+// Barra de compra fixa no celular (pdi.html): aparece depois do hero
+// e some quando a seção de compra está na tela, pra não duplicar o botão
+const buyBar = document.getElementById('buyBar');
+if (buyBar) {
+  document.body.classList.add('has-buy-bar');
+  const heroEl = document.querySelector('.hero');
+  const buyEl = document.getElementById('comprar');
+  const buyBtn = buyBar.querySelector('a');
+  let pastHero = false, atBuy = false;
+  const render = () => {
+    const show = pastHero && !atBuy;
+    buyBar.classList.toggle('show', show);
+    buyBar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    if (buyBtn) buyBtn.tabIndex = show ? 0 : -1;
+  };
+  if ('IntersectionObserver' in window) {
+    if (heroEl) new IntersectionObserver(([en]) => {
+      pastHero = !en.isIntersecting && en.boundingClientRect.top < 0; render();
+    }).observe(heroEl);
+    else pastHero = true;
+    if (buyEl) new IntersectionObserver(([en]) => { atBuy = en.isIntersecting; render(); }, { threshold: 0.15 }).observe(buyEl);
+  } else { pastHero = true; }
+  render();
+}

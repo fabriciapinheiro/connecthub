@@ -527,3 +527,23 @@ h1,h2,h3,h4{font-family:var(--font);font-weight:600;letter-spacing:-.035em;line-
 }
 .icon,.thumb{margin-bottom:0;}
 .stat-tile .num{margin-top:auto;}
+
+/* ---------- BARRA DE COMPRA FIXA (pdi.html, só no celular) ---------- */
+.buy-bar{display:none;}
+@media (max-width:640px){
+  .buy-bar{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);z-index:60;
+    padding:10px 10px 10px 18px;border-radius:999px;
+    background:var(--ink);color:#fff;box-shadow:var(--shadow-lg);
+    transform:translateY(calc(100% + 24px));opacity:0;pointer-events:none;
+    transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .25s ease;
+  }
+  .buy-bar.show{transform:none;opacity:1;pointer-events:auto;}
+  .buy-bar-info{display:flex;flex-direction:column;line-height:1.2;min-width:0;}
+  .buy-bar-price{font-weight:700;font-size:16px;letter-spacing:-.02em;}
+  .buy-bar-sub{font-family:var(--mono);font-size:10px;color:#B9B9C0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .buy-bar-btn{background:var(--gold);color:var(--ink);font-weight:600;flex:none;}
+  .buy-bar-btn:hover{background:#fff;}
+  body.has-buy-bar .footer{padding-bottom:110px;}
+}
