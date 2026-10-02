@@ -1,6 +1,6 @@
 # Fabrícia Pinheiro · Site
 
-Site de consultoria em Gestão de Pessoas (@fabipinheiro.rh).
+Site de consultoria em Gestão de Pessoas (@fabipinheiro_rh).
 
 - `index.html` · início, sobre, serviços (pessoas e empresas) e contato
 - `materiais.html` · vitrine de materiais e cursos

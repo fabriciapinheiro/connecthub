@@ -191,9 +191,19 @@ h1,h2,h3,h4{font-family:var(--font);font-weight:600;letter-spacing:-.035em;line-
 .hero-copy h1{font-size:clamp(38px,5.4vw,72px);letter-spacing:-.05em;line-height:.98;margin:18px 0 18px;}
 .hero-copy .lead{font-size:17px;color:var(--ink-soft);max-width:460px;}
 .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
-.photo-tile{padding:0;min-height:520px;background:#EDE9E4;}
-.photo-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;z-index:0;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);}
-.photo-tile:hover img{transform:scale(1.04);}
+.photo-tile{min-height:520px;}
+.card.photo-tile{
+  padding:60px 24px 108px;align-items:center;justify-content:center;
+  background:radial-gradient(120% 90% at 50% 38%,var(--gold-light) 0%,#FBF3E4 45%,var(--wine-light) 100%);
+}
+/* foto redonda, no estilo do perfil do Instagram */
+.photo-tile img{
+  width:clamp(190px,76%,330px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;
+  box-shadow:0 0 0 6px #fff,0 0 0 8px var(--gold),0 26px 44px -24px rgba(122,31,53,.45);
+  transition:transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+.photo-tile:hover img{transform:scale(1.03);}
+@media (max-width:360px){.card.photo-tile{padding-bottom:132px;}}
 .photo-tile .overlay{
   position:absolute;left:14px;right:14px;bottom:14px;z-index:2;
   display:flex;justify-content:space-between;align-items:center;gap:10px;
