@@ -2,7 +2,7 @@
    FABRÍCIA PINHEIRO · folha de estilos compartilhada (versão bento)
    Usada por: index.html, materiais.html, pdi.html, curriculo.html
    Layout: mosaico de blocos brancos sobre fundo cinza claro
-   Cores: neutros + bordô e amarelo como detalhe
+   Cores: neutros + bordô e amarelo como detalhe · azul como cor de apoio
    Fontes: Geist (títulos e texto) · Geist Mono (rótulos)
    ============================================================ */
 :root{
@@ -20,6 +20,10 @@
   --gold:#F5D06F;
   --gold-dark:#8A6508;
   --gold-light:#FDF6E1;
+
+  --blue:#60839F;        /* azul do fundo da foto de perfil */
+  --blue-dark:#3F5F7A;   /* texto e fundos escuros (branco por cima) */
+  --blue-light:#EAF1F6;  /* fundos suaves */
 
   --r-xl:32px;
   --r-lg:26px;
