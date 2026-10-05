@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recrutamento &amp; Seleção | Fabrícia Pinheiro</title>
+<meta name="description" content="Recrutamento e Seleção para empresas: vaga avulsa ou pacotes de vagas, com Avaliação PDA opcional. Por Fabrícia Pinheiro.">
+<meta name="theme-color" content="#F4F4F2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=bento2">
+<style>
+/* ---------- Ajustes só desta página (recrutamento.html) ---------- */
+.rs-table-wrap{position:relative;}
+.rs-off{
+  position:absolute;top:-24px;right:22px;z-index:3;background:var(--gold);color:var(--ink);
+  border-radius:16px;padding:10px 16px 11px;transform:rotate(3deg);box-shadow:var(--shadow-lg);line-height:1.15;
+}
+.rs-off b{display:block;font-size:22px;font-weight:700;letter-spacing:-.04em;}
+.rs-off span{font-family:var(--mono);font-size:11px;color:var(--wine);}
+.rs-card h3{margin-bottom:16px;padding-right:150px;}
+.rs-table{display:grid;gap:6px;}
+.rs-row{
+  display:grid;grid-template-columns:1.25fr 1.2fr .7fr 1.15fr;gap:14px;align-items:center;
+  background:var(--bg);border-radius:12px;padding:12px 16px;font-size:14px;color:var(--ink);
+}
+.rs-row.head{background:none;padding-top:0;padding-bottom:2px;}
+.rs-row .range{font-weight:500;}
+.rs-row .old{color:var(--ink-soft);text-decoration:line-through;font-size:13px;margin-right:8px;}
+.rs-row .com{color:var(--wine);font-weight:600;}
+.rs-row .op{color:var(--blue-dark);font-weight:600;}
+.rs-row .total{font-weight:600;font-size:19px;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+.rs-rules{margin-top:var(--gap);}
+.rs-rule{flex-direction:row;align-items:center;gap:12px;padding:16px 20px;}
+.rs-rule p{color:var(--ink);font-size:14px;}
+.rs-rule .chip{flex:none;}
+.chip-blue{background:var(--blue-light);color:var(--blue-dark);}
+.rs-examples{margin-top:36px;}
+.rs-examples > .mono-label{display:block;margin-bottom:12px;}
+.rs-example .num{font-size:clamp(28px,2.6vw,36px);letter-spacing:-.04em;margin:14px 0 8px;}
+.rs-example s{color:var(--ink-soft);}
+.rs-note{flex-direction:row;align-items:center;gap:14px;margin-top:var(--gap);background:var(--blue-dark);border-color:var(--blue-dark);padding:18px 22px;}
+.rs-note p{color:#fff;font-size:14.5px;}
+.rs-note .dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(245,208,111,.22);}
+.plan .per{font-size:13px;color:var(--ink-soft);margin-top:4px;}
+.plan.featured .per{color:#A9A9B0;}
+@media (max-width:640px){
+  .rs-off{right:14px;}
+  .rs-row.head{display:none;}
+  .rs-row{grid-template-columns:1fr 1fr;gap:10px 14px;padding:14px;}
+  .rs-row .range{grid-column:span 2;font-size:15px;font-weight:600;}
+  .rs-row .total-cell{grid-column:span 2;}
+  .rs-row [data-label]::before{
+    content:attr(data-label);display:block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ink-soft);margin-bottom:2px;font-weight:400;
+  }
+  .rs-rule{align-items:flex-start;flex-direction:column;gap:8px;}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo"><span class="mark">RS</span> Recrutamento &amp; Seleção</a>
+    <nav class="nav-links" aria-label="Seções">
+      <a href="#escopo">Escopo</a>
+      <a href="#avulsa">Vaga avulsa</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#pda">PDA</a>
+      <a href="index.html">Início</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="https://wa.link/imory9" target="_blank" rel="noopener" class="btn btn-wine btn-sm">Falar no WhatsApp</a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!--
+  PÁGINA: RECRUTAMENTO & SELEÇÃO (recrutamento.html)
+  1. HERO  2. ESCOPO #escopo  3. VAGA AVULSA #avulsa  4. PACOTES #pacotes
+  5. AVALIAÇÃO PDA (opcional) #pda  6. CTA
+-->
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-center">
+    <span class="eyebrow">Recrutamento &amp; Seleção · para empresas</span>
+    <h1>Contratações mais assertivas, com <span class="hl">critérios claros</span>.</h1>
+    <p class="lead">Da descrição da vaga aos finalistas, em vaga avulsa ou em pacotes de vagas.</p>
+    <div class="hero-actions">
+      <a href="#avulsa" class="btn btn-gold">Ver formatos e valores</a>
+      <a href="https://wa.link/imory9" target="_blank" rel="noopener" class="btn btn-outline-light">Falar no WhatsApp</a>
+    </div>
+    <p class="hero-meta">Comissão <strong>apenas se a vaga fechar</strong> com a escolha do meu candidato</p>
+  </div>
+</section>
+
+<!-- ================= ESCOPO ================= -->
+<section class="section reveal" id="escopo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Escopo</span>
+      <h2>O que está incluído em cada vaga.</h2>
+      <p>O mesmo escopo vale para vaga avulsa e para pacotes.</p>
+    </div>
+    <div class="grid cols-4">
+      <div class="step"><b>01</b><h4>Descrição da vaga</h4></div>
+      <div class="step"><b>02</b><h4>Divulgação em canais estratégicos</h4></div>
+      <div class="step"><b>03</b><h4>Entrevista comportamental</h4></div>
+      <div class="step"><b>04</b><h4>Entrevista técnica</h4></div>
+      <div class="step"><b>05</b><h4>Descrição de perfis</h4></div>
+      <div class="step"><b>06</b><h4>Ranking de candidatos</h4></div>
+      <div class="step"><b>07</b><h4>Finalistas direcionados</h4></div>
+      <div class="step" style="background:var(--blue-dark);"><b style="color:#D5E3EE;">Opcional</b><h4 style="color:#fff;">Avaliação PDA como plus de análise comportamental</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VAGA AVULSA ================= -->
+<section class="section reveal" id="avulsa">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Vaga avulsa</span>
+      <h2>O investimento acompanha o salário da vaga.</h2>
+      <p>O total é a soma da comissão com o operacional, calculados sobre o salário mensal da vaga.</p>
+    </div>
+
+    <div class="rs-table-wrap">
+      <div class="rs-off" aria-label="15% off na comissão"><b>15% off</b><span>na comissão</span></div>
+      <div class="card rs-card">
+        <h3>Tabela de preços por faixa salarial</h3>
+        <div class="rs-table">
+          <div class="rs-row head">
+            <span class="mono-label">Salário mensal da vaga</span>
+            <span class="mono-label">Comissão</span>
+            <span class="mono-label">Operacional</span>
+            <span class="mono-label">Investimento total</span>
+          </div>
+          <div class="rs-row">
+            <span class="range">Até R$ 1.350</span>
+            <span data-label="Comissão"><span class="old">R$ 1.000</span><span class="com">R$ 850</span></span>
+            <span data-label="Operacional" class="op">R$ 350</span>
+            <span data-label="Investimento total" class="total-cell"><span class="total">R$ 1.200 fixo</span></span>
+          </div>
+          <div class="rs-row">
+            <span class="range">R$ 1.350,01 a R$ 3.300</span>
+            <span data-label="Comissão"><span class="old">80%</span><span class="com">68% do salário</span></span>
+            <span data-label="Operacional" class="op">20%</span>
+            <span data-label="Investimento total" class="total-cell"><span class="total">88% do salário</span></span>
+          </div>
+          <div class="rs-row">
+            <span class="range">R$ 3.300,01 a R$ 5.300</span>
+            <span data-label="Comissão"><span class="old">80%</span><span class="com">68% do salário</span></span>
+            <span data-label="Operacional" class="op">15%</span>
+            <span data-label="Investimento total" class="total-cell"><span class="total">83% do salário</span></span>
+          </div>
+          <div class="rs-row">
+            <span class="range">Acima de R$ 5.300</span>
+            <span data-label="Comissão"><span class="old">70%</span><span class="com">59,5% do salário</span></span>
+            <span data-label="Operacional" class="op">10%</span>
+            <span data-label="Investimento total" class="total-cell"><span class="total">69,5% do salário</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid cols-2 rs-rules">
+      <div class="card rs-rule">
+        <span class="chip chip-blue">Operacional</span>
+        <p>Pago na abertura da vaga.</p>
+      </div>
+      <div class="card rs-rule">
+        <span class="chip chip-wine">Comissão</span>
+        <p>Paga apenas se a vaga fechar com a escolha do meu candidato.</p>
+      </div>
+    </div>
+
+    <div class="rs-examples">
+      <span class="mono-label">Na prática · já com 15% off na comissão</span>
+      <div class="grid cols-4">
+        <div class="card rs-example">
+          <span class="mono-label">Salário de R$ 1.350</span>
+          <div class="num">R$ 1.200</div>
+          <p><s>R$ 1.350</s> · valor fixo</p>
+          <p>R$ 850 de comissão + R$ 350 operacional</p>
+        </div>
+        <div class="card rs-example">
+          <span class="mono-label">Salário de R$ 2.500</span>
+          <div class="num">R$ 2.200</div>
+          <p><s>R$ 2.500</s> · 88% do salário</p>
+          <p>R$ 1.700 de comissão + R$ 500 operacional</p>
+        </div>
+        <div class="card rs-example">
+          <span class="mono-label">Salário de R$ 4.000</span>
+          <div class="num">R$ 3.320</div>
+          <p><s>R$ 3.800</s> · 83% do salário</p>
+          <p>R$ 2.720 de comissão + R$ 600 operacional</p>
+        </div>
+        <div class="card rs-example">
+          <span class="mono-label">Salário de R$ 7.000</span>
+          <div class="num">R$ 4.865</div>
+          <p><s>R$ 5.600</s> · 69,5% do salário</p>
+          <p>R$ 4.165 de comissão + R$ 700 operacional</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PACOTES ================= -->
+<section class="section reveal" id="pacotes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Pacotes de vagas</span>
+      <h2>Valor fixo mensal, em 6 parcelas.</h2>
+      <p>Para quem tem várias vagas previstas e quer previsibilidade no investimento.</p>
+    </div>
+    <div class="grid cols-3">
+      <div class="card plan">
+        <span class="chip" style="align-self:flex-start;">Valor de referência</span>
+        <h3 style="margin-top:18px;">6 vagas</h3>
+        <div class="price">R$ 1.350 <small>por mês</small></div>
+        <p class="per">em 6 parcelas mensais</p>
+        <ul class="checks">
+          <li>Total do pacote: R$ 8.100</li>
+          <li>Valor por vaga: R$ 1.350</li>
+          <li>Mesmo escopo da vaga avulsa</li>
+        </ul>
+        <a href="https://wa.link/imory9" target="_blank" rel="noopener" class="btn btn-wine btn-block">Quero esse</a>
+      </div>
+      <div class="card plan">
+        <span class="chip chip-gold" style="align-self:flex-start;">10% menor por vaga</span>
+        <h3 style="margin-top:18px;">12 vagas</h3>
+        <div class="price">R$ 2.430 <small>por mês</small></div>
+        <p class="per">em 6 parcelas mensais</p>
+        <ul class="checks">
+          <li>Total do pacote: R$ 14.580</li>
+          <li>Valor por vaga: R$ 1.215</li>
+          <li>Mesmo escopo da vaga avulsa</li>
+        </ul>
+        <a href="https://wa.link/imory9" target="_blank" rel="noopener" class="btn btn-wine btn-block">Quero esse</a>
+      </div>
+      <div class="card plan featured">
+        <span class="chip chip-gold" style="align-self:flex-start;">25% menor por vaga</span>
+        <h3 style="margin-top:18px;">24 vagas</h3>
+        <div class="price">R$ 4.050 <small>por mês</small></div>
+        <p class="per">em 6 parcelas mensais</p>
+        <ul class="checks">
+          <li>Total do pacote: R$ 24.300</li>
+          <li>Valor por vaga: R$ 1.012,50</li>
+          <li>Mesmo escopo da vaga avulsa</li>
+        </ul>
+        <a href="https://wa.link/imory9" target="_blank" rel="noopener" class="btn btn-gold btn-block">Quero esse</a>
+      </div>
+    </div>
+    <div class="card rs-note">
+      <span class="dot"></span>
+      <p>Vagas não abertas até o fim do contrato podem ser utilizadas em até 3 meses após o encerramento. Os percentuais comparam o valor por vaga com o do pacote de 6.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AVALIAÇÃO PDA (OPCIONAL) ================= -->
+<section class="section dark reveal" id="pda">
+  <div class="wrap">
+    <div class="pricing">
+      <div>
+        <span class="eyebrow">Avaliação PDA · opcional</span>
+        <h2>Um plus de análise comportamental.</h2>
+        <p class="lead">É opcional: você decide se quer incluir junto ao Recrutamento e Seleção. Usa a metodologia PDA Internacional, baseada na teoria do comportamento humano de William Marston.</p>
+        <div class="chips" style="margin-top:18px;">
+          <span class="chip chip-gold">Opcional</span>
+          <span class="chip">Por candidato ou colaborador</span>
+          <span class="chip">Relatório + apresentação gerencial</span>
+        </div>
+      </div>
+      <div class="price-card">
+        <span class="mono-label">Por relatório</span>
+        <div class="price-big" style="margin-top:8px;"><sup>R$</sup>360</div>
+        <ul class="checks">
+          <li>Emissão do relatório e apresentação gerencial dos resultados</li>
+          <li>Devolutiva individual: R$ 500, contratada à parte</li>
+          <li>Pacotes: 6 relatórios por R$ 2.160, 12 por R$ 4.320 e 24 por R$ 8.640</li>
+        </ul>
+        <a href="https://wa.link/imory9" target="_blank" rel="noopener" class="btn btn-wine btn-block">Quero incluir o PDA</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section reveal" id="contato">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <span class="eyebrow">Próximo passo</span>
+        <h2>Vamos definir o formato ideal para as suas vagas?</h2>
+        <p>Começa com um diagnóstico rápido do seu contexto.</p>
+      </div>
+      <div class="actions">
+        <a href="https://wa.link/imory9" target="_blank" rel="noopener" class="btn btn-gold">Falar no WhatsApp</a>
+        <a href="https://www.instagram.com/fabipinheiro_rh/" target="_blank" rel="noopener" class="btn btn-outline-light">Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <a href="index.html" class="logo"><span class="mark">FP</span> Fabrícia Pinheiro</a>
+    <div class="footer-links">
+      <a href="index.html">Início</a>
+      <a href="index.html#servicos">Serviços</a>
+      <a href="materiais.html">Materiais</a>
+      <a href="https://www.instagram.com/fabipinheiro_rh/" target="_blank" rel="noopener">@fabipinheiro_rh</a>
+    </div>
+    <span>© <span data-year>2026</span> Fabrícia Pinheiro</span>
+  </div>
+</footer>
+
+<script src="script.js?v=bento2"></script>
+</body>
+</html>
