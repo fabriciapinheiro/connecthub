@@ -37,7 +37,9 @@ const sideIcon = name =>
 
 let side = null, setSide = () => {};
 if (nav) {
-  const page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  // Página atual (aceita o endereço com ou sem ".html")
+  let page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  if (!page.includes('.')) page += '.html';
   const link = l => {
     const current = !l.href.includes('#') && l.href === page;
     return '<a class="side-link' + (current ? ' is-current' : '') + '" href="' + l.href + '"' +
@@ -84,6 +86,14 @@ if (nav) {
   document.body.prepend(backdrop);
   document.body.prepend(side);
   root.classList.add('has-side');
+
+  // Se o navegador ainda estiver com o estilo antigo guardado, busca o atual
+  if (getComputedStyle(side).position !== 'fixed') {
+    const fresh = document.createElement('link');
+    fresh.rel = 'stylesheet';
+    fresh.href = 'style.css?v=bento5-side';
+    document.head.appendChild(fresh);
+  }
 
   // Em telas menores a barra vira gaveta, aberta pelo botão de menu
   const wide = window.matchMedia('(min-width:1240px)');
