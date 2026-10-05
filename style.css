@@ -562,8 +562,10 @@ h1,h2,h3,h4{font-family:var(--font);font-weight:600;letter-spacing:-.035em;line-
   display:flex;flex-direction:column;padding:14px 12px 12px;
   background:rgba(255,255,255,.92);border:1px solid rgba(17,17,19,.06);border-radius:var(--r-lg);
   -webkit-backdrop-filter:saturate(1.6) blur(16px);backdrop-filter:saturate(1.6) blur(16px);
-  box-shadow:var(--shadow);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;
+  box-shadow:var(--shadow);overflow:hidden;
 }
+/* em telas baixas só a lista rola; logo e botões ficam sempre à vista */
+.side > nav{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;margin-right:-6px;padding-right:6px;}
 .side-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:2px 4px 10px 6px;}
 .side-close{
   display:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--tile);
@@ -588,7 +590,7 @@ h1,h2,h3,h4{font-family:var(--font);font-weight:600;letter-spacing:-.035em;line-
 .side-sub{margin-left:17px;padding-left:8px;border-left:1px solid var(--line);display:grid;gap:1px;}
 .side-sub .side-link{padding:6px 10px;font-size:13px;}
 .side-sub .side-link.is-active{color:var(--wine);background:var(--wine-light);font-weight:500;}
-.side-foot{margin-top:auto;display:grid;gap:4px;padding-top:10px;border-top:1px solid var(--line);}
+.side-foot{flex:none;display:grid;gap:4px;padding-top:10px;border-top:1px solid var(--line);}
 .side-foot .btn{margin-bottom:4px;}
 .side-backdrop{display:none;}
 
@@ -597,6 +599,12 @@ h1,h2,h3,h4{font-family:var(--font);font-weight:600;letter-spacing:-.035em;line-
   .has-side body{padding-left:262px;}
   .has-side .nav{display:none;}
   .has-side .sticky-card{top:28px;}
+  /* blocos que ocupam a largura toda (hero, seção em caixa, rodapé) ganham a mesma
+     margem dos demais, para não encostar na barra nem na borda da tela */
+  .has-side .hero > .wrap,
+  .has-side .section.dark > .wrap,
+  .has-side .footer-inner{width:calc(100% - 40px);}
+  .has-side .footer-inner{padding-left:0;padding-right:0;}
 }
 @media (max-width:1239px){
   .side{

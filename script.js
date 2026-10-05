@@ -91,7 +91,7 @@ if (nav) {
   if (getComputedStyle(side).position !== 'fixed') {
     const fresh = document.createElement('link');
     fresh.rel = 'stylesheet';
-    fresh.href = 'style.css?v=bento5-side';
+    fresh.href = 'style.css?v=bento6-side';
     document.head.appendChild(fresh);
   }
 
